@@ -1,0 +1,27 @@
+[package]
+name = "reconf"
+version = "0.1.0"
+authors = ["Tuncay D <mamehiscore@aol.com>"]
+description = "Edit or view data from RetroArch config files"
+readme = "README.md"
+repository = "https://github.com/thingsiplay/reconf/"
+license-file = "LICENSE"
+keywords = ["retroarch", "libretro", "emulation", "cfg", "editor"]
+categories = ["command-line-utilities", "emulators", "parsing", "text-processing"]
+edition = "2021"
+publish = false
+
+[dependencies]
+indexmap = "1.9"
+regex = "1"
+gumdrop = "0.8"
+rev_lines = "0.2"
+compact_str = "0.6"
+colored = "2.0"
+
+[profile.release]
+opt-level = "z"
+codegen-units = 1
+lto = true
+panic = "abort"
+strip = "symbols"
